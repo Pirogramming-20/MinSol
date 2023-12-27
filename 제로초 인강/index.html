@@ -73,30 +73,40 @@
         * {
             box-sizing: border-box;
         }
-        html, body, form, ul {
-            margin: 0px;
-            padding: 0px;
+        html, body {
+            font-size: 10.5px;
+            line-height: 10.5px;
+            margin: 0;
+            padding: 0;
+            letter-spacing: -0.4px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕';
+        }
+        form, ul {
+            margin: 0;
+            padding: 0;
         }
         #wrap {
             text-align: center;
         }
         #wrap-center {
             width: 1280px;
+            display: inline-block;
         }
         #header {
             text-align: left;
-            position:relative;
-            height: 70px;
+            position: relative;
+            height: 64px;
         }
-        #header-hamburger, #header-naverpay, #header-navertalk, #header-notice {
-            position:absolute;
-            top: 18px;
+        #header-hamburger, #header-naverpay, #header-notice, #header-talk {
+            position: absolute;
+            top:18px;
+            padding: 10px;
             display: inline-block;
             background: none;
             border: none;
             cursor: pointer;
         }
-        #header-hamburger:hover::before,  #header-naverpay:hover::before, #header-navertalk:hover::before,  #header-notice:hover::before {
+        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-talk:hover::before, #header-notice:hover::before {
             position: absolute;
             content: '';
             z-index: 0;
@@ -106,24 +116,23 @@
             height: 44px;
             background-color: var(--color_option_bg);
             border-radius: 50%;
-        }   
+        }
         #header-hamburger:hover > div, #header-naverpay:hover > div, #header-navertalk:hover > div, #header-notice:hover > div {
             position: relative;
             left: 1px;
             top: 1px;
         }
-        #header-hamburger > div, #header-naverpay > div, #header-navertalk > div, #header-notice > div {
-            background-image: url(../과제/sp_main.png);
-            position: relative;
-            z-index: 1;
+        #header-hamburger > div, #header-naverpay > div, #header-talk > div, #header-notice > div {
+            background-image: url(./sp_main.png);
+            background-size: 433px 412px;
+            background-repeat: no-repeat;
             width: 26px;
             height: 26px;
-            background-repeat: no-repeat;
-            background-size: 433px 412px;
+            z-index: 1;
+            position: relative;
         }
         #header-hamburger {
             left: -10px;
-            padding: 10px;
         }
         #header-hamburger > div {
             background-position: -335px -81px;
@@ -137,19 +146,17 @@
             height: 32px;
             background-position: -295px -177px;
         }
-        #header-navertalk {
+        #header-talk {
             right: 40px;
             width: 46px;
             height: 46px;
-            padding: 10px;
-        }  
-        #header-navertalk > div {
+        }
+        #header-talk > div {
             background-position: -335px -189px;
         }
         #header-notice {
             right: -10px;
-            padding: 10px;
-        }  
+        }
         #header-notice > div {
             background-position: -335px -135px;
         }
@@ -186,62 +193,60 @@
             <style>
                 #search > form {
                     display: inline-flex;
-                    width: 708.13px;
-                    height: 60.13px;
+                    width: 708px;
+                    height: 60px;
                     border: 1px solid #03c75a;
                     border-radius: 33px;
                     text-align: left;
                 }
-                #search > form:hover {
-                    box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
+                #search > form:hover{
+                    box-shadow: 2px 2px 5px #e4e4e4;
                 }
                 #search-svg {
                     display: inline-flex;
-                    width: 68px;
-                    height: 100%;
-                    margin-right: 12px;
-                    padding-left: 10px;
-                    align-items: center;
                     justify-content: center;
-                }
-                #search-svg svg {
-                    width: 24px;
-                    height: 24px;
-                    fill: #03c75a;
+                    align-items: center;
+                    width: 68px;
+                    margin-right: 12px;
+                    height: 100%;
+                    padding-left: 10px;
                 }
                 #search-svg::after {
                     display: none;
                 }
-                #search > form:focus-within #search-svg::after  {
+                #search > form:focus-within #search-svg::after {
                     content: '';
-                    position: absolute;
-                    right: 0;
                     width: 1px;
                     height: 20px;
                     background-color: #e4e4e4;
-                    top: 20px;
+                    position: absolute;
                     display: inline-block;
+                    right: 0;
+                    top: 20px;
+                }
+                #search-svg svg {
+                    width: 24px;
+                    height: 24px;
+                    fill:#03c75a;
                 }
                 #search-input {
                     width: 480px;
-                    height: 54px;
                     padding: 17px 0px;
-                    font-size: 1.3rem;
-                    font-weight: bold;
+                    font-size: 2rem;
                     line-height: 24px;
-                    outline: 0;
+                    font-weight: bold;
                     border: none;
                     outline: none;
                 }
-                #search-input::placeholder {
+                #search-input::placeholder{
                     color: white;
                 }
-                #search-input:focus::placeholder {
+                #search-input:focus::placeholder{
                     color: #e4e4e4;
                 }
                 #search-right {
-                    display: flex;
                     flex: 1;
+                    display: flex;
                     align-items: stretch;
                     justify-content: flex-end;
                 }
@@ -252,7 +257,7 @@
                 }
                 #search-keyboard::before {
                     content: "";
-                    display: inline-block;
+                    display: block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
                     background-size: 433px 412px;
                     background-position: -254px -254px;
@@ -261,11 +266,11 @@
                     height: 14px;
                 }
                 #search-keyboard:hover::before {
-                    filter: brightness(70%);
+                    filter: brightness(0.7);
                 }
                 #search-recent::before {
                     content: "";
-                    display: inline-block;
+                    display: block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
                     background-size: 433px 412px;
                     background-position: -133px -201px;
@@ -277,7 +282,6 @@
                     padding: 17px 27px 16px 10px;
                 }
                 #search-button > div {
-                    background-image: #03c75a;
                     width: 25px;
                     height: 25px;
                 }
@@ -294,11 +298,11 @@
             </style>
             <div id="search">
                 <form action="">
-                    <a id="search-svg" href="#" style="position: relative;">
+                    <a id="search-svg" href="#">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg>
                     </a>
                     <label for="search-input" class="blind">검색어 입력</label>
-                    <input id="search-input" type="text" placeholder="검색어를 입력해 주세요.">
+                    <input id="search-input" type="text" placeholder="검색어를 입력해 주세요."/>
                     <div id="search-right">
                         <button href="#" id="search-keyboard">
                             <span class="blind">입력도구</span>
@@ -310,6 +314,7 @@
                             <div><span class="blind">검색</span></div>
                         </button>
                     </div>
+                    <button class="blind">검색</button>
                 </form>
             </div>
             <style>
@@ -320,30 +325,31 @@
                     display: flex;
                     list-style-type: none;
                     justify-content: center;
-                    font-size: 0.9rem;
+                    font-size: 1.4rem;
                     line-height: 20px;
                 }
                 #nav a {
-                    text-decoration: none;
                     text-align: center;
+                    text-decoration: none;
                 }
                 #nav a div {
                     margin: 0 auto;
-                    display: inline-flex;
                     position: relative;
-                    justify-content: center;
+                    text-align: center;
+                    display: inline-flex;
                 }
                 #nav a div::after {
+                    position: relative;
+                    z-index: 1;
                     content: '';
-                    display: inline-block;
                     margin: 2px;
+                    display: inline-block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
                     background-size: 433px 412px;
+                    background-position: -250px -90px;
                     background-repeat: no-repeat;
                     width: 44px;
                     height: 44px;
-                    z-index: 1;
-                    position: relative;
                 }
                 #nav a:visited {
                     color: black;
@@ -351,11 +357,26 @@
                 #nav li {
                     width: 64px;
                     margin-left: 4px;
+                    display: flex;
+                    justify-content: center;
                 }
-                #nav li:nth-of-type(1) {
+                #nav li :nth-of-type(1) {
                     margin-left: 0;
                 }
-                #nav li:nth-of-type(1) a div::after {
+                #nav li a div::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: -2px;
+                    left: -3px;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                    background-size: 433px 412px;
+                    background-position: 0px -128px;
+                    background-repeat: no-repeat;
+                    width: 54px;
+                    height: 54px;
+                }
+                #nav li:nth-last-of-type(1) a div::after {
                     background-position: -250px -90px;
                 }
                 #nav li:nth-of-type(2) a div::after {
@@ -377,13 +398,13 @@
                     background-position: -45px -209px;
                 }
                 #nav li:nth-of-type(8) a div::before {
-                    left: 0px;
+                    left: 0;
                 }
                 #nav li:nth-of-type(8) a div::after {
                     background-position: -201px 0px;
-                    top: -2px;
                     width: 48px;
                     height: 48px;
+                    top: -2px;
                 }
                 #nav li:nth-of-type(9) a div::after {
                     background-position: -225px -209px;
@@ -393,23 +414,10 @@
                 }
                 #nav li a span {
                     display: inline-block;
-                    margin-top: 5px;
+                    margin-top: 7px;
                 }
                 #nav li:nth-of-type(8) a span {
-                    margin-top: 1px;
-                }
-                #nav li a div::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: -2px;
-                    left: -3px;
-                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
-                    background-size: 433px 412px;
-                    background-position: 0px -128px;
-                    background-repeat: no-repeat;
-                    width: 54px;
-                    height: 54px;
+                    margin-top: 3px;
                 }
             </style>
             <nav id="nav">
@@ -478,8 +486,8 @@
             </nav>   
             <style>
                 #main {
-                    display: flex;
                     margin-top: 51px;
+                    display: flex;
                 }
                 #main-left {
                     width: 830px;
@@ -489,7 +497,7 @@
                     width: 420px;
                 }
                 #main-left-ad, #main-right-ad {
-                    background-color: gray;
+                    background: gray;
                 }
                 aside[id$=ad] {
                     border-radius: 8px;
@@ -497,21 +505,19 @@
                 }
                 #main-left-ad {
                     height: 130px;
-                    margin-bottom: 16px;
                 }
                 section[id^=main] {
-                    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
+                    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, .04);
                     border-radius: 8px;
+                    margin-bottom: 16px;
                 }
                 #main-shopping {
                     height: 560px;
-                    margin-top: 16px;
                 }
                 #main-login {
                     height: 164px;
-                    margin-bottom: 16px;
                     padding: 21px 20px 18px;
-                    font-size: 0.9rem;
+                    font-size: 1.4rem;
                     display: flex;
                     flex-flow: column;
                 }
@@ -521,7 +527,7 @@
                 #main-login-button {
                     margin-top: 13px;
                     padding: 17px 0;
-                    border: 1px solid rgba(0,0,0,.06);
+                    border: 1px solid rgba(0, 0, 0, .06);
                     height: 56px;
                     border-radius: 4px;
                     background-color: #03c75a;
@@ -531,7 +537,7 @@
                 }
                 #main-login-button i {
                     vertical-align: -1px;
-                    background-image: url(./sp_main.png);
+                    background-image: url(../과제/sp_main.png);
                     background-size: 433px 412px;
                     background-position: -120px -166px;
                     background-repeat: no-repeat;
@@ -541,7 +547,9 @@
                     margin: 3px 8px 0 0;
                 }
                 #main-login > div:last-of-type {
-                    font-size: 0.8rem;
+                    font-size: 1.3rem;
+                    display: flex;
+                    justify-content: center;
                 }
                 #main-login > div:last-of-type a {
                     text-decoration: none;
@@ -550,7 +558,7 @@
                 }
                 #main-login > div:last-of-type a:first-of-type, #main-login > div:last-of-type a:last-of-type {
                     position: relative;
-                    top: 5px;
+                    top: 6px;
                 }
                 #main-login > div:last-of-type a:hover {
                     text-decoration: underline;
@@ -566,7 +574,6 @@
                 }
                 #main-right-ad {
                     height: 240px;
-                    margin-bottom: 16px;
                 }
                 .main-weather-and-stock {
                     padding: 0 18px;
@@ -583,7 +590,6 @@
                 }
                 #main-stock {
                     height: 236px;
-                    margin-top: 16px;
                 }
                 #main-newstand {
                     height: 426px;
@@ -595,41 +601,41 @@
                     padding: 18px 20px;
                 }
                 #main-newstand-top .dot::before {
-                     content: '';
-                     display: inline-block;
-                     width: 4px;
-                     height: 4px;
-                     background-color: #d3d5d7;
-                     background-color: var(--color_dot_divider);
-                     margin: 9px 7px 0;
-                     border-radius: 50%;
-                     vertical-align: 5px;
-                 }
-                 #main-newstand-top .slash, #main-newstand-top .dot {
-                     color: rgba(8, 8, 8, .5);
-                     font-weight: 800;
-                 }
-                 #main-newstand-top .slash {
-                     position: relative;
-                     padding-left: 26px;
-                 }
-                 #main-newstand-top .slash::before {
-                     content: '';
-                     display: inline-block;
-                     position: absolute;
-                     top: 4px;
-                     left: 13px;
-                     width: 1px;
-                     height: 15px;
-                     background-color: #d3d5d7;
-                     background-color: var(--color_dot_divider);
-                     -webkit-transform: skewX(-15deg);
-                     -ms-transform: skewX(-15deg);
-                     transform: skewX(-15deg);
-                 }
+                    content: '';
+                    display: inline-block;
+                    width: 4px;
+                    height: 4px;
+                    background-color: #d3d5d7;
+                    background-color: var(--color_dot_divider);
+                    margin: 9px 7px 0;
+                    border-radius: 50%;
+                    vertical-align: 5px;
+                }
+                #main-newstand-top .slash, #main-newstand-top .dot {
+                    color: rgba(8, 8, 8, .5);
+                    font-weight: 800;
+                }
+                #main-newstand-top .slash {
+                    position: relative;
+                    padding-left: 26px;
+                }
+                #main-newstand-top .slash::before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 4px;
+                    left: 13px;
+                    width: 1px;
+                    height: 15px;
+                    background-color: #d3d5d7;
+                    background-color: var(--color_dot_divider);
+                    -webkit-transform: skewX(-15deg);
+                    -ms-transform: skewX(-15deg);
+                    transform: skewX(-15deg);
+                }
                 #main-newstand header {
                     font-size: 1.6rem;
-                    color: rgba(8,8,8,.5);
+                    color: rgba(8, 8, 8, .5);
                     display: flex;
                     justify-content: flex-start;
                     line-height: 23px;
@@ -643,106 +649,108 @@
                     display: flex;
                     justify-content: flex-start;
                     height: 50px;
-                     padding: 12px 20px;
-                     background-color: var(--color_option_bg);
-                     border-radius: 4px;
-                     font-size: 1.4rem;
-                     line-height: 26px;
-                 }
-                 #main-newstand-gray .left {
-                     flex: 1;
-                     display: flex;
-                 }
-                 #main-newstand-gray .left > a:first-of-type {
-                     width: 85.5px;
-                 }
-                 #main-newstand-animation a:first-of-type {
-                     position: relative;
-                     top: -1px;
-                     line-height: 26px;
-                 }
-                 #main-newstand-gray .left > a:first-of-type::after {
-                     content: '';
-                     background: url(./sp_main.png);
-                     background-size: 433px 412px;
-                     background-position: -154px -201px;
-                     background-repeat: no-repeat;
-                     width: 9px;
-                     height: 6px;
-                     display: inline-block;
-                     margin: 10px 0 0 5px;
-                     vertical-align: 3px;
-                 }
-                 #main-newstand-animation a:first-of-type::after {
-                     content: '';
-                     display: inline-block;
-                     width: 3px;
-                     height: 3px;
-                     background-color: #d3d5d7;
-                     background-color: var(--color_dot_divider);
-                     margin: 12px 6px 0 6px;
-                     border-radius: 50%;
-                     vertical-align: 5px;
-                 }
-                 #main-newstand-animation {
-                     padding-left: 25px;
-                     position: relative;
-                     display: flex;
-                 }
-                 #main-newstand-animation::before {
-                     content: "";
-                     display: block;
-                     position: absolute;
-                     top: 7px;
-                     left: 12px;
-                     background-color: #d3d5d7;
-                     background-color: var(--color_dot_divider);
-                     width: 1px;
-                     height: 12px;
-                 }
-                 #main-newstand-animation a:last-of-type {
-                     text-overflow: ellipsis;
-                     width: 400px;
-                     white-space: nowrap;
-                     display: inline-block;
-                     overflow: hidden;
-                 }
-                 #main-newstand-gray .right {
-                     display: flex;
-                 }
-                 #main-newstand-gray .bold {
-                     font-weight: bold;
-                     padding-left: 25px;
-                     position: relative;
-                 }
-                 #main-newstand-gray .bold::before {
-                     content: "";
-                     display: block;
-                     position: absolute;
-                     top: 7px;
-                     left: 12px;
-                     width: 1px;
-                     height: 12px;
-                     background-color: #d3d5d7;
-                     background-color: var(--color_dot_divider);
-                 }
+                    padding: 12px 20px;
+                    background-color: var(--color_option_bg);
+                    border-radius: 4px;
+                    font-size: 1.4rem;
+                    line-height: 26px;
+                }
+                #main-newstand-gray .left {
+                    flex: 1;
+                    display: flex;
+                }
+                #main-newstand-gray .left > a:first-of-type {
+                    width: 85.5px;
+                }
+                #main-newstand-animation a:first-of-type {
+                    position: relative;
+                    top: -1px;
+                    line-height: 26px;
+                }
+                #main-newstand-gray .left > a:first-of-type::after {
+                    content: '';
+                    background: url(./sp_main.png);
+                    background-size: 433px 412px;
+                    background-position: -154px -201px;
+                    background-repeat: no-repeat;
+                    width: 9px;
+                    height: 6px;
+                    display: inline-block;
+                    margin: 10px 0 0 5px;
+                    vertical-align: 3px;
+                }
+                #main-newstand-animation a:first-of-type::after {
+                    content: '';
+                    display: inline-block;
+                    width: 3px;
+                    height: 3px;
+                    background-color: #d3d5d7;
+                    background-color: var(--color_dot_divider);
+                    margin: 12px 6px 0 6px;
+                    border-radius: 50%;
+                    vertical-align: 5px;
+                }
+                #main-newstand-animation {
+                    padding-left: 25px;
+                    position: relative;
+                    display: flex;
+                }
+                #main-newstand-animation::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 7px;
+                    left: 12px;
+                    background-color: #d3d5d7;
+                    background-color: var(--color_dot_divider);
+                    width: 1px;
+                    height: 12px;
+                }
+                #main-newstand-animation a:last-of-type {
+                    text-overflow: ellipsis;
+                    width: 400px;
+                    white-space: nowrap;
+                    display: inline-block;
+                    overflow: hidden;
+                }
+                #main-newstand-gray .right {
+                    display: flex;
+                }
+                #main-newstand-gray .bold {
+                    font-weight: bold;
+                    padding-left: 25px;
+                    position: relative;
+                }
+                #main-newstand-gray .bold::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 7px;
+                    left: 12px;
+                    width: 1px;
+                    height: 12px;
+                    background-color: #d3d5d7;
+                    background-color: var(--color_dot_divider);
+                }
                 #main-newstand a {
                     text-decoration: none;
                 }
                 #main-newstand a:visited {
                     color: inherit;
                 }
-                #main-newstand a:hover  {
+                #main-newstand a:hover {
                     text-decoration: underline;
                 }
                 #main-newstand-grid {
                     display: grid;
                     justify-content: center;
                     align-items: center;
-                    grid-gap: 1px;
                     height: 224px;
-                    grid-template-rows: repeat(4, 56px);
-                    grid-template-columns: repeat(6, 131.27px);
+                    grid-gap: 1px;
+                    background-color: var(--color_border_in);
+                    grid-template-rows: repeat(4, 1fr);
+                    width: 790px;
+                    grid-template-columns: repeat(6, 1fr);
                     border: 1px solid var(--color_border_in);
                     border-radius: 4px;
                     margin-top: 18px;
@@ -752,12 +760,102 @@
                     background-color: white;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                 }
                 #main-newstand footer {
                     border-top: 1px solid var(--color_border_in);
                     padding: 10px 0 11px;
+                    font-size: 1.3rem;
+                    line-height: 35px;
+                    font-weight: 600;
+                    color: #606060;
+                    color: var(--color_caption2);
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
                 }
-            </style>            
+                #main-newstand footer .list, #main-newstand footer .grid {
+                    position: absolute;
+                    border: none;
+                    cursor: pointer;
+                    top: 0;
+                    background-color: transparent;
+                }
+                #main-newstand footer .list {
+                    right: 49px;
+                    padding: 18px 9px 18px 20px;
+                }
+                #main-newstand footer .list::before {
+                    content: '';
+                    display: inline-block;
+                    background: url(./sp_main.png);
+                    background-size: 433px 412px;
+                    background-position: -118px -69px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                }
+                #main-newstand footer .list:hover::before {
+                    background-position: -363px -333px;
+                }
+                #main-newstand footer .grid {
+                    right: 0;
+                    padding: 18px 20px 18px 9px;
+                }
+                #main-newstand footer .grid::before {
+                    content: '';
+                    display: inline-block;
+                    background: url(./sp_main.png);
+                    background-size: 433px 412px;
+                    background-position: -388px -189px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                }
+                #main-newstand footer .prev, #main-newstand footer .next {
+                    background: none;
+                    border: none;
+                    content: '';
+                    width: 36px;
+                    height: 36px;
+                    border: 1px solid #dadcdf;
+                    border: 1px solid var(--color_button_border);
+                    background-color: #fff;
+                    background-color: var(--color_button1_bg);
+                    display: inline-block;
+                    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
+                    box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #main-newstand footer .prev::before {
+                    transform: rotate(180deg);
+                }
+                #main-newstand footer .prev::before, #main-newstand footer .next::before {
+                    content: "";
+                    display: block;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                    background-size: 433px 412px;
+                    background-position: -179px -400px;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 12px;
+                    margin: auto;
+                }
+                #main-newstand footer .text {
+                    padding: 0 16px;
+                    width: 156px;
+                }
+                #main-newstand footer .news {
+                    color: var(--color_news);
+                }
+                #main-newstand footer .total {
+                    color: var(96, 96, 96, .5);
+                }
+            </style>      
             <main id="main">
                 <div id="main-left">
                     <aside id="main-left-ad"></aside>
@@ -811,11 +909,11 @@
                             </div>
                         </div>   
                         <footer>
-                            <button><span class="blind">이전</span></button>
-                            <div>언론사 더보기1페이지전체/4</div>
-                            <button><span class="blind">다음</span></button>
-                            <button><span class="blind">목록보기</span></button>
-                            <button><span class="blind">격자보기</span></button>                                              
+                            <button class="prev"><span class="blind">이전 페이지</span></button>
+                            <div class="text"><span class="news">언론사</span>&nbsp;&nbsp;더보기 1<span class="total"></span>/4</div>
+                            <button class="next"><span class="blind">다음 페이지</span></button>
+                            <button class="list"><span class="blind">목록보기</span></button>
+                            <button class="grid"><span class="blind">격자보기</span></button>
                         </footer>
                     </section>
                     <section id="main-shopping"></section>
