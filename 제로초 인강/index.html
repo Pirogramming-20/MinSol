@@ -185,7 +185,7 @@
             </div>
             <style>
                 #search > form {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 708.13px;
                     height: 60.13px;
                     border: 1px solid #03c75a;
@@ -193,10 +193,13 @@
                     text-align: left;
                 }
                 #search-svg {
-                    display: inline-block;
-                    width: 67px;
-                    height: 58px;
-                    padding: 17px 16px 17px 27px;
+                    display: inline-flex;
+                    width: 68px;
+                    height: 100%;
+                    margin-right: 12px;
+                    padding-left: 10px;
+                    align-items: center;
+                    justify-content: center;
                 }
                 #search-svg svg {
                     width: 24px;
@@ -215,11 +218,19 @@
                     outline: none;
                 }
                 #search-right {
-                    display: inline-block;
+                    flex: 1;
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-end;
+                }
+                #search-keyboard, #search-recent, #search-button {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
                 }
                 #search-keyboard::before {
                     content: "";
-                    display: block;
+                    display: inline-block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
                     background-size: 433px 412px;
                     background-position: -254px -254px;
@@ -229,7 +240,7 @@
                 }
                 #search-recent::before {
                     content: "";
-                    display: block;
+                    display: inline-block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
                     background-size: 433px 412px;
                     background-position: -133px -201px;
