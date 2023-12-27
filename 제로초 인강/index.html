@@ -192,6 +192,9 @@
                     border-radius: 33px;
                     text-align: left;
                 }
+                #search > form:hover {
+                    box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
+                }
                 #search-svg {
                     display: inline-flex;
                     width: 68px;
@@ -210,16 +213,22 @@
                     width: 480px;
                     height: 54px;
                     padding: 17px 0px;
-                    font-size: 2rem;
-                    line-height: 24px;
+                    font-size: 1.3rem;
                     font-weight: bold;
+                    line-height: 24px;
                     outline: 0;
                     border: none;
                     outline: none;
                 }
+                #search-input::placeholder {
+                    color: white;
+                }
+                #search-input:focus::placeholder {
+                    color: rgb(230, 230, 230);
+                }
                 #search-right {
-                    flex: 1;
                     display: flex;
+                    flex: 1;
                     align-items: stretch;
                     justify-content: flex-end;
                 }
@@ -238,6 +247,9 @@
                     width: 24px;
                     height: 14px;
                 }
+                #search-keyboard:hover::before {
+                    filter: brightness(70%);
+                }
                 #search-recent::before {
                     content: "";
                     display: inline-block;
@@ -248,7 +260,15 @@
                     width: 10px;
                     height: 6px;
                 }
-                #search-button::before {
+                #search-button {
+                    padding: 17px 27px 16px 10px;
+                }
+                #search-button > div {
+                    background-image: #03c75a;
+                    width: 25px;
+                    height: 25px;
+                }
+                #search-button > div::before {
                     content: "";
                     display: inline-block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
